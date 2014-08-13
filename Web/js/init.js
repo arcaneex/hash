@@ -1,5 +1,5 @@
 
-var rohbot = new RohBot("wss://fpp.literallybrian.com/ws/");
+var rohbot = new RohBot("ws://chat.glua.me//ws/");
 var chatMgr = new ChatManager(rohbot);
 var ui = new UserInterface(rohbot, chatMgr);
 
