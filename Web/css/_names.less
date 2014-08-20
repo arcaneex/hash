@@ -122,7 +122,7 @@
         -webkit-background-clip: text;
         background-clip: text;
     }
-
+    
     /** 
  * Thanks David! ;)
  */
@@ -249,11 +249,6 @@
   }
 }
 
-body {
-  background: black; 
-  overflow: hidden;
-}
-
 /**
  * Until @at-root (Sass 3.3), we have to call this outside h1
  * Actually @keyframes bubbling would work too.
@@ -261,11 +256,9 @@ body {
  @include metafizzy-animations(red orangered gold lightgreen green deepskyblue);
 
 
-    .ohgod {
-        margin: .1em;
-        @include metafizzy(5em, 5s);     
-    }
-    
-    
+.ohgod {
+  margin: .1em;
+  @include metafizzy(5em, 5s);     
+}
     }
 }
