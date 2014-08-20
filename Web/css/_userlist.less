@@ -1,90 +1,117 @@
 
-#users {
-    background-color: @color-userlist-background;
-    font-size: 0.9em;
-    width: (@userlist-width + @userlist-padding * 2);
-    overflow-y: scroll;
+#history .message {
 
-    ol {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        > div {
-            height: @userlist-height;
-            padding: @userlist-padding;
-            padding-left: (@userlist-padding * 2);
-            white-space: nowrap;
-
-            > div {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                padding-left: @userlist-padding;
-                color: @color-user-steam;
-
-                &[data-color=ingame] {
-                    color: @color-user-ingame;
-                }
-
-                &[data-color=web] {
-                    color: @color-user-rohbot;
-                }
-
-                &[data-rank=Administrator]:before {
-                    content: '\2605\00a0';
-                    color: #FECB00;
-                }
-
-                &[data-rank=Moderator]:before {
-                    content: '\2605\00a0';
-                    color: #CFCFCF;
-                }
-            }
-        }
-
-        img {
-            width: @userlist-height;
-            height: @userlist-height;
-            vertical-align: text-top;
-            float: left;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    .state {
+        opacity: 0.75;
     }
-}
 
-@media all and (max-width: 899px) {
-    #users {
-        width: ((@userlist-width + @userlist-padding * 2) / 2);
+    .steam {
+        color: @color-user-steam;
     }
-}
 
-@media all and (max-width: 599px) {
-    #users {
-        width: ((@userlist-width + @userlist-padding * 2) / 3);
-
-        > ol div {
-            height: 100%;
-            padding: (@userlist-padding / 4);
-            padding-left: 0;
-            
-            img,
-            span {
-                display: none;
-            }
-        }
+    .inGame {
+        color: @color-user-ingame;
     }
-}
 
-@media all and (max-width: 399px) {
-    #users {
-        display: none;
+    .rohBot {
+        color: @color-user-rohbot;
+    }
+
+    // Heart (Dajoh)
+    .heart:after {
+        content: '\00a0\2764';
+        color: #FF69B4;
+        text-shadow: 0 0 0.4em #FF69B4;
+    }
+
+    // Glow (Rohan)
+    .glow {
+        color: white;
+        text-shadow: 0 0 0.5em white;
+    }
+
+    // Green + Monospace (Sweb)
+    .hacker {
+        font-size: 1.15em;
+        line-height: 0.95em;
+        color: #0B0;
+        font-family: monospace;
+    }
+    .hacker:after {
+        content: '.c';
+    }
+
+    // Swastikas
+    .hitler:before,
+    .hitler:after {
+        content: "\5350";
+        transform: rotate(45deg);
+        display: inline-block;
+        font-size: small;
+    }
+    .hitler:before {
+        margin-right: 3px;
+    }
+    .hitler:after {
+        margin-left: 3px;
+    }
+
+    // Australian (Brian)
+    .upsidedown {
+        transform: rotate(-180deg);
+        display: inline-block;
+    }
+
+    // Red (Shoar)
+    .red {
+        color: #dc2832;
+    }
+
+    // Pink (DergBot)
+    .hot {
+        font-weight: bold;
+        color: #FF69B4;
+    }
+
+    // Ubuntu Orange (Krix)
+    .orangepeel {
+        font-weight: bold;
+        color: #DD4814;
+    }
+
+    // All spooky n shit. (Farmatyr)
+    .ghostmatyr {
+        color: rgb(129, 162, 172);
+        text-shadow: rgb(129, 162, 172) 0 0 2px;
+        transform: rotate(3deg);
+        display: inline-block;
+    }
+
+    // African (Naarkie)
+    .african {
+        color: #d7ceb2;
+        font-weight: bold;
+        text-shadow: 2px 2px 0px #2c2e38, 1px 1px 0px #5c5f72;
+    }
+
+    // Dark Blue (Vbitz)
+    .thinBlue {
+        text-shadow: 0px 0px 5px #808080;
+        color: #1E90FF;
+        font-weight: lighter;
+    }
+
+    // Tea (Blk)
+    .tea {
+        display: inline-block;
+        text-indent: -9999px;
+        background-image: url(data:image/gif;base64,R0lGODlhEgASAPUsAAAAAAsLC3BwcHJycnNzc3R0dH5+fow6AKsAAK0FEr0AAMwADM4EFM4FFc4JGNQQH8YfK9QRINEYJtIaKNIbKdIcKtIdK9kTItcgLtchL9Q7R42NjZOQkJGXl6ekpL+/v8fHx8zMzNHp5+Li4ufn5/Pz8/T09Pb4+P339/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUAACwALAAAAAASABIAAAaRQNbhwCoShcWk8pg8MpXCpxO6nCKpLIB2y91CASIPZ8xZmc3drKjDUUA4msYKtQKUVyqtqK1QJB4TDmhaJCN6fH0YFBVoRQAlh319GRQWjVkmkZKUlnWOKZqTEguXAKBgY5IRDGdbKyCHqQgXZ3UcILixqWUnJnVcagIbZLcgIR8AX2ACAgXOAwQGAcnKXcBQQQA7);
+        width: 18px;
+    }
+
+    // Crack (Cra0)
+    .crack {
+        font-weight: bold;
+        color: #06F;
     }
 }
