@@ -9,7 +9,7 @@ namespace RohBot.Commands
 
         public override void Handle(CommandTarget target, string type, string[] parameters)
         {
-            if (!Util.IsSuperAdmin(target) || parameters.Length == 0)
+            if (!Util.IsMod(target) || parameters.Length == 0)
                 return;
 
             if (!Util.IsValidUsername(parameters[0]))
