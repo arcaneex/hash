@@ -2,7 +2,7 @@ namespace RohBot.Commands
 {
     public class Repo : Command
     {
-        public override string Type { get { return "wiki"; } }
+        public override string Type { get { return "repo"; } }
 
         public override string Format(CommandTarget target, string type) { return "]"; }
 
