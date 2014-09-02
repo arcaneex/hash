@@ -98,6 +98,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="Commands\Banned.cs" />
     <Compile Include="Commands\Broadcast.cs" />
+    <Compile Include="Commands\Repo.cs" />
     <Compile Include="Commands\Ban.cs" />
     <Compile Include="Commands\Default.cs" />
     <Compile Include="Commands\Demod.cs" />
