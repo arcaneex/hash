@@ -18,8 +18,18 @@ namespace RohBot.Commands
                 target.Send("You are banned from this room.");
                 return;
             }
-
-            var line = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
+            
+            var line = new StateLine(
+               Util.GetCurrentTimestamp(),
+               target.Room.RoomInfo.ShortName,
+               "Action",
+               username,
+               target.Connection.Session.Account.Id.ToString("D"),
+               "RohBot",
+               "", "0", "",
+               string.Format("http://glua.me/docs/#?f={0}", parameters[0]));
+           
+               
             target.Room.SendLine(line);
             return;
         }
