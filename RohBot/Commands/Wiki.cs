@@ -19,33 +19,8 @@ namespace RohBot.Commands
                 return;
             }
             
-            var line = new StateLine
-            {
-                Date = Util.GetCurrentTimestamp(),
-                Chat = target.Room.RoomInfo.ShortName,
-                State = "Action",
-                For = "",
-                ForId = ",
-                ForType = "RohBot"
-            };
+            target.Send(string.Format("http://glua.me/docs/#?f={0}", parameters[0]));
 
-            if (target.IsWeb)
-            {
-                var byAccount = target.Connection.Session.Account;
-                line.By = byAccount.Name;
-                line.ById = byAccount.Id.ToString("D");
-                line.ByType = "RohBot";
-            }
-            else
-            {
-                line.By = target.Persona.DisplayName;
-                line.ById = target.Persona.Id.ConvertToUInt64().ToString("D");
-                line.ByType = "Steam";
-            }
-
-            line.Content = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
-               
-            target.Room.SendLine(line);
             return;
         }
     }
