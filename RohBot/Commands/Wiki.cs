@@ -19,7 +19,7 @@ namespace RohBot.Commands
                 return;
             }
 
-            var send = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
+            var line = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
             target.Room.SendLine(line);
             return;
         }
