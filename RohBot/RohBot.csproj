@@ -115,6 +115,7 @@
     <Compile Include="Commands\Status.cs" />
     <Compile Include="Commands\Unban.cs" />
     <Compile Include="Commands\Users.cs" />
+    <Compile Include="Commands\Wiki.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DelayManager.cs" />
