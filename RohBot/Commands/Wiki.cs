@@ -11,14 +11,16 @@ namespace RohBot.Commands
             if ( !target.IsRoom || parameters.Length == 0)
                 return;
 
-            var username = target.Connection.Session.Account.Name;
             var room = target.Room;
-            if (room.IsBanned(username))
+            if (target.IsWeb)
             {
-                target.Send("You are banned from this room.");
-                return;
+                var username = target.Connection.Session.Account.Name;
+                if (room.IsBanned(username))
+                {
+                    target.Send("You are banned from this room.");
+                    return;
+                }
             }
-            
             target.Room.Send(string.Format("http://glua.me/docs/#?f={0}", parameters[0]));
 
             return;
