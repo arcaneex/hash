@@ -2,7 +2,7 @@ namespace RohBot.Commands
 {
     public class Repo : Command
     {
-        public override string Type { get { return "repo"; } }
+        public override string Type { get { return "wiki"; } }
 
         public override string Format(CommandTarget target, string type) { return "]"; }
 
@@ -11,14 +11,16 @@ namespace RohBot.Commands
             if ( !target.IsRoom )
                 return;
 
-            var username = target.Connection.Session.Account.Name;
             var room = target.Room;
-            if (room.IsBanned(username))
+            if (target.IsWeb)
             {
-                target.Send("You are banned from this room.");
-                return;
+                var username = target.Connection.Session.Account.Name;
+                if (room.IsBanned(username))
+                {
+                    target.Send("You are banned from this room.");
+                    return;
+                }
             }
-            
             var send;
             if (parameters.Length == 0) {
                 send = "https://github.com/gmodcoders/";
@@ -31,6 +33,7 @@ namespace RohBot.Commands
                 }
             }
             target.Room.SendLine(send);
+
             return;
         }
     }
