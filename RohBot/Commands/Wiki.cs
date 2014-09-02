@@ -19,11 +19,9 @@ namespace RohBot.Commands
                 return;
             }
 
-            if (parameters[0].Contains('.')) {
-                var send = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
-                target.Room.SendLine(line);
-                return;
-            }
+            var send = string.Format("http://glua.me/docs/#?f={0}", parameters[0]);
+            target.Room.SendLine(line);
+            return;
         }
     }
 }
